@@ -1,14 +1,30 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <HeadWrapper/>
+
     <router-view/>
+
+    <FootWrapper/>
   </div>
 </template>
 
+<script>
+import HeadWrapper from './components/headWrapper.vue'
+import FootWrapper from './components/footWrapper.vue'
+
+export default {
+  components: {
+    HeadWrapper,
+    FootWrapper
+  }
+}
+</script>
+
 <style lang="scss">
+ul,li,a { 
+  text-decoration: none; 
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
