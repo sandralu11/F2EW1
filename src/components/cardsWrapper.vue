@@ -30,15 +30,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../assets/media.scss';
+
 .card-container{
     box-sizing: border-box;
     margin-top: 50px;
     padding: 15px;
     display: inline-block;
     width: 25%;
+    @include mobile{
+        width: 100%;
+    }
     .card{
         width: 100%;
-        height: 346px;
         box-shadow: 7px 8px 22px rgba(111, 119, 137, 0.25);
         overflow: hidden;
         border-radius: 8px;
@@ -83,10 +87,9 @@ export default {
             color: #525151;
         }
     button{
-
-        width: 179px;
-        height: 32px;
-        left: calc(50% - 179px/2 + 0.5px);
+        display: block;
+        width: 60%;
+        margin: auto;
         color: #08A6BB;
         background: #FFFFFF;
         border: 4px solid #08A6BB;
