@@ -19,6 +19,7 @@ export default {
             font-weight: bold;
             font-size: 20px;
             line-height: 120px;
+            text-align: center;
         }
     }
 </style>
