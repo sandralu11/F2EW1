@@ -25,10 +25,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../assets/media.scss';
 .container{
   margin: 100px 95px;
-  h2{
-    
+  @include mobile{
+    margin: 30px 20px;
+  }
+  h2{ 
     font-weight: bold;
     font-size: 30px;
     color: #08A6BB;

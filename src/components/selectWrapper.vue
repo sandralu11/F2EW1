@@ -6,21 +6,23 @@
                 <SwiperSlide><img src="https://source.unsplash.com/random/1440x600/?city" alt="輪播"></SwiperSlide>
                 <SwiperSlide><img src="https://source.unsplash.com/random/1440x600/?walk" alt="輪播"></SwiperSlide>
         </Swiper>
-        <div class="selectbox">
+        <div class="content">
             <p>Welcome to Travel Taiwan</p>
-            <select>
-                <option>類別</option>
-                <option>Dog</option>
-                <option>Cat</option>
-            </select>
-            <select>
-                <option>所有縣市</option>
-                <option>Dog</option>
-                <option>Cat</option>
-            </select>
-            <span class="icon">
-                <i class='bx bx-search-alt'></i>
-            </span>
+            <div class="selectbox">
+                <select>
+                    <option>類別</option>
+                    <option>Dog</option>
+                    <option>Cat</option>
+                </select>
+                <select>
+                    <option>所有縣市</option>
+                    <option>Dog</option>
+                    <option>Cat</option>
+                </select>
+                <span class="icon">
+                    <i class='bx bx-search-alt'></i>
+                </span>
+            </div>
         </div>   
     </div>
 
@@ -41,17 +43,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../assets/media.scss';
 .banner{
     position: relative;
-    .selectbox{
+    .content{
         position:absolute ;
         left: 50%;
         top: 50%;
         transform: translate(-50%,-50%);    
         z-index: 2;
-    }
-    .selectbox{
+        .selectbox{
+            @include mobile{
+                display: flex;
+                justify-content: space-between;
+            }
+        }
         p{
+            text-align: center;
             font-style: italic;
             font-weight: bold;
             font-size: 48px;
@@ -76,17 +84,27 @@ export default {
             text-align: center;
             border:#FFF;
             &:nth-child(even){
-                width: 190px;
+                width: 270px;
+                @include mobile{
+                    width: 175px;
+                }
             }
             &:nth-child(odd){
-                width: 270px;
+                width: 190px;
+                @include mobile{
+                    width: 75px;
+                }
             }
         }
     }
     .mySwiper{
-    img{
-        width: 100%;
-    }
+        img{
+            width: 100%;
+            @include mobile{
+                height: 450px;
+                overflow: cover;
+            }
+        }
     }
 }
 
