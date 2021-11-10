@@ -12,6 +12,7 @@ export default {
 
 <style lang="scss" scoped>
     footer{
+        margin-top: 50px ;
         height: 120px;
         background: #08A6BB;
         p{

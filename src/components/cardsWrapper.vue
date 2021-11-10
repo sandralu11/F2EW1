@@ -52,14 +52,14 @@ export default {
             object-fit: cover;
         }
         .card-info{
-            padding: 0;
+            padding: 0 15px 20px;
             ul{
                 margin: 20px 0 ;
             }
         }
         i{
             vertical-align: middle;
-            padding-right: 5px;
+            padding-right:3px;
         }
         .name{
             display: inline-block;
@@ -95,6 +95,10 @@ export default {
         border: 4px solid #08A6BB;
         box-sizing: border-box;
         border-radius: 8px;
+        &:hover{
+            color: #FFF;
+            background: #08A6BB;
+        }
     }
     }
 }

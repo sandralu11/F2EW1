@@ -9,20 +9,29 @@
         <h2>活動類別</h2>
         <p>各種不同的活動內容</p>
         <p>邀請您一銅來共襄盛舉！</p>
+        <ActivityWrapper/>
     </div>
-    
+    <div class="slogn">
+      <img src="../assets/unsplash_dQejX2ucPBs.png" alt="">
+      <div class="text">
+            <p>“To travel is to live” </p>
+            <p>– Hans Christian Anderson-  </p>
+      </div>  
+    </div>
   </div>
 </template>
 
 <script>
 import SelectWrapper from '../components/selectWrapper.vue'
 import CardsWrapper from '../components/cardsWrapper.vue'
+import ActivityWrapper from '../components/activitylWrapper.vue'
 
 export default {
   name: 'Home',
   components: {
     SelectWrapper,
-    CardsWrapper
+    CardsWrapper,
+    ActivityWrapper
   }
 }
 </script>
@@ -45,6 +54,30 @@ export default {
     color: #AEAEAE;
     
   }
+}
+.slogn{
+  margin-bottom: -50px;
+  position: relative;
+  img{
+    width: 100%;
+    display: block;
+    @include mobile{
+      height: 350px;
+    }
+  }
+  .text{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    p{
+    font-size: 32px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  }
+
 }
 
 </style>
