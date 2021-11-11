@@ -16,7 +16,7 @@
                     <span class="location">臺東縣951綠島鄉</span>
                 </li>
             </ul>
-            <button>了解更多</button>
+            <AlertWrapper/>
         </div>
     </div>
 </div>
@@ -24,8 +24,12 @@
 </template>
 
 <script>
-export default {
+import AlertWrapper from "./alertWapper.vue";
 
+export default {
+    components: {
+        AlertWrapper,
+    }
 }
 </script>
 
