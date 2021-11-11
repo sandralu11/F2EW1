@@ -5,7 +5,10 @@
         <h2>熱門景點</h2>
         <p>台灣的各個美景，都美不勝收。</p>
         <p> 等你一同來發現這座寶島的奧妙！</p>
-        <CardsWrapper v-for="(item, i) in 8" :key="i"/>
+        <CardsWrapper v-for="(item, i) in list" :key="i"
+          :name="item.Name"
+          :img="item.Picture.PictureUrl1"
+        />
         <h2>活動類別</h2>
         <p>各種不同的活動內容</p>
         <p>邀請您一銅來共襄盛舉！</p>
@@ -25,6 +28,7 @@
 import SelectWrapper from '../components/selectWrapper.vue'
 import CardsWrapper from '../components/cardsWrapper.vue'
 import ActivityWrapper from '../components/activitylWrapper.vue'
+import getAPI from '../lib/Authorzation.js'
 
 export default {
   name: 'Home',
@@ -32,6 +36,16 @@ export default {
     SelectWrapper,
     CardsWrapper,
     ActivityWrapper
+  },
+  created (){
+    getAPI().then(res => {
+      this.list=res
+    })
+  },
+  data (){
+    return{
+      list:[]
+    }
   }
 }
 </script>
