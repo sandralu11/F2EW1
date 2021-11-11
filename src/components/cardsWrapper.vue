@@ -7,13 +7,13 @@
                 <li class="name">{{name}}</li>
                 <li class="time-box"> 
                     <i class='bx bx-time-five' ></i>
-                    <span class="time">全天候開放</span>
+                    <span class="time">{{time}}</span>
                 </li>
             </ul>
             <ul>
                 <li class="locationn-box"> 
                     <i class='bx bxs-map'></i>
-                    <span class="location">臺東縣951綠島鄉</span>
+                    <span class="location">{{address}}</span>
                 </li>
             </ul>
             <AlertWrapper/>
@@ -30,7 +30,7 @@ export default {
     components: {
         AlertWrapper,
     },
-    props:['name','img']
+    props:['name','img','time','address']
 }
 </script>
 

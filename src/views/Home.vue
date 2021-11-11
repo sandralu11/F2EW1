@@ -8,6 +8,8 @@
         <CardsWrapper v-for="(item, i) in list" :key="i"
           :name="item.Name"
           :img="item.Picture.PictureUrl1"
+          :time="item.OpenTime"
+          :address="item.Address"
         />
         <h2>活動類別</h2>
         <p>各種不同的活動內容</p>
