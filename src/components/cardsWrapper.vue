@@ -1,10 +1,10 @@
 <template>
 <div class="card-container">
     <div class="card">
-        <img src="https://source.unsplash.com/random/396x184/?travel" alt="trawel">
+        <img :src="img" alt="trawel">
         <div class="card-info">
             <ul>
-                <li class="name">正濱漁港懷舊碼頭</li>
+                <li class="name">{{name}}</li>
                 <li class="time-box"> 
                     <i class='bx bx-time-five' ></i>
                     <span class="time">全天候開放</span>
@@ -29,7 +29,8 @@ import AlertWrapper from "./alertWapper.vue";
 export default {
     components: {
         AlertWrapper,
-    }
+    },
+    props:['name','img']
 }
 </script>
 
