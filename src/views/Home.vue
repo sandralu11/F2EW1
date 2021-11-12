@@ -4,7 +4,7 @@
     <div class="container">
         <h2>熱門景點</h2>
         <p>台灣的各個美景，都美不勝收。</p>
-        <p> 等你一同來發現這座寶島的奧妙！</p>
+        <p>等你一同來發現這座寶島的奧妙！</p>
         <CardsWrapper v-for="(item, i) in list" :key="i"
           :name="item.Name"
           :img="item.Picture.PictureUrl1"
