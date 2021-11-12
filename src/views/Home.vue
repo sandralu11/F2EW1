@@ -30,7 +30,8 @@
 import SelectWrapper from '../components/selectWrapper.vue'
 import CardsWrapper from '../components/cardsWrapper.vue'
 import ActivityWrapper from '../components/activitylWrapper.vue'
-import getAPI from '../lib/Authorzation.js'
+import getAPI from '../lib/Authorization.js'
+
 
 export default {
   name: 'Home',

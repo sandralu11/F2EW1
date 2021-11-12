@@ -7,7 +7,20 @@ export default {
   methods: {
     showAlert() {
       // Use sweetalert2
-       this.$swal('Hello Vue world!!!');
+        this.$swal({
+          title: '紫坪',
+          showCloseButton: true,
+          showConfirmButton:false,
+          html:
+          'You can use <b>bold text</b>, ' +
+          '<a href="//sweetalert2.github.io">links</a> ' +
+          'and other HTML tags',
+          imageUrl: 'https://unsplash.it/400/200',
+          imageWidth: 400,
+          imageHeight: 300,
+          footer: '<a href="">Why do I have this issue?</a>',
+          imageAlt: 'Custom image',
+        });
     },
   },
 };
