@@ -85,6 +85,7 @@ export default {
     display: block;
     @include mobile{
       height: 350px;
+      object-fit: cover;
     }
   }
   .text{
@@ -97,6 +98,7 @@ export default {
     text-align: center;
     color: #fff;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
   }
   }
 

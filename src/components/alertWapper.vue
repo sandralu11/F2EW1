@@ -20,13 +20,12 @@
             </li>
         </ul>
         <ul>
-          <!-- <li class="description" >{{description}}</li> -->
-          <li class="descriptionDetail" >{{descriptionDetail}}</li>
+          <li class="description" >{{description}}</li>
+          <!-- <li class="descriptionDetail" >{{descriptionDetail}}</li> -->
         </ul> 
-        <ul>
+        <ul class="img">
           <img :src="img" alt="trawelimg">
         </ul>
-        
         <ul class="info">
             <li>
               <i class='bx bxs-coupon'></i>
@@ -79,6 +78,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../assets/media.scss';
+
 button{
   display: block;
   width: 60%;
@@ -94,7 +95,11 @@ button{
   }
 }
 .alter-info{
-    padding: 0 15px 20px;
+    padding: 40px;
+    width: 50%;
+    @include mobile{
+    width: 80%;
+    }
     ul{
         margin: 20px 0 ;
         &:first-child{
@@ -115,7 +120,9 @@ button{
       font-size: 20px;
     }
     img{
+      height: 365px;
       width: 100%;
+      object-fit: cover;
     }
     .description,.descriptionDetail{
       line-height: 24px;

@@ -101,7 +101,7 @@ export default {
             width: 100%;
             @include mobile{
                 height: 450px;
-                overflow: cover;
+                object-fit: cover;
             }
         }
     }
