@@ -1,6 +1,5 @@
 <template>
     <div class="banner">
-       
         <Swiper class="mySwiper">
                 <SwiperSlide><img src="https://source.unsplash.com/random/1440x600/?travel" alt="輪播"></SwiperSlide>
                 <SwiperSlide><img src="https://source.unsplash.com/random/1440x600/?city" alt="輪播"></SwiperSlide>
