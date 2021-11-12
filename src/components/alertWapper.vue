@@ -19,9 +19,9 @@ export default {
           imageUrl: 'https://unsplash.it/400/200',
           imageWidth: 400,
           imageHeight: 300,
-          footer: " <i style='color:#08A6BB;' class='bx bx-time-five' ></i> <span style='color:#08A6BB;'>全天候開放</span>"+"&emsp;"
-                  +"<a style='color:#08A6BB;' href='tel:02-1154-7789'><i class='bx bx-phone' ></i>02-1154-7789</a>"+"&emsp;"
-                  +"<i style='color:#08A6BB;' class='bx bx-list-ul' ></i> <span style='color:#08A6BB;'>自然風景類</span>",
+          footer: " <i style='color:#08A6BB;font-size:14px' class='bx bx-time-five' ></i> <span style='color:#08A6BB;font-size:14px'>全天候開放</span>"+"&emsp;"
+                  +"<a style='color:#08A6BB;font-size:14px' href='tel:02-1154-7789'><i class='bx bx-phone' ></i>02-1154-7789</a>"+"&emsp;"
+                  +"<i style='color:#08A6BB;font-size:14px' class='bx bx-list-ul' ></i> <span style='color:#08A6BB;font-size:14px'>自然風景類</span>",
           imageAlt: 'Custom image',
         });
     },

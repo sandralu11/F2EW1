@@ -2,8 +2,10 @@
     <header>
         <nav>
             <ul class="logo">
-                <img src="@/assets/3.png" alt="Travel Taiwan">
-                <p>Travel Taiwan</p>
+                <router-link to="/">
+                    <img src="@/assets/3.png" alt="Travel Taiwan">
+                    <p>Travel Taiwan</p>
+                </router-link>
             </ul>
             <ul class="list"> 
                 <li><router-link to="/">首頁</router-link></li>

@@ -30,7 +30,16 @@ export default {
     components: {
         AlertWrapper,
     },
-    props:['name','img','time','address']
+    props: {
+        name:String,
+        time:String,
+        address:String,
+        img:{
+            type:String,
+            default:"../assets/default.jpg",
+        },
+    }
+    // ['name','img','time','address']
 }
 </script>
 
@@ -85,11 +94,14 @@ export default {
         }
         .bxs-map{
             color: #08A6BB;
+            font-size: 16px;
+            vertical-align: middle;
         }
         .location{
             font-weight: 500;
             font-size: 16px;
             color: #525151;
+            vertical-align: middle;
         }
     button{
         display: block;
