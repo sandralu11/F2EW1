@@ -10,6 +10,11 @@
           :img="item.Picture.PictureUrl1"
           :time="item.OpenTime"
           :address="item.Address"
+          :description="item.Description"
+          :descriptionDetail ="item.DescriptionDetail"
+          :phone="item.Phone"
+          :ticketInfo="item.TicketInfo"
+          :class1="item.Class1"
         />
         <h2>活動類別</h2>
         <p>各種不同的活動內容</p>

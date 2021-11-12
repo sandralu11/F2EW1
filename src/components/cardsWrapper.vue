@@ -1,7 +1,7 @@
 <template>
 <div class="card-container">
     <div class="card">
-        <img :src="img" alt="trawel">
+        <img :src="img" alt="trawelimg">
         <div class="card-info">
             <ul>
                 <li class="name">{{name}}</li>
@@ -16,7 +16,17 @@
                     <span class="location">{{address}}</span>
                 </li>
             </ul>
-            <AlertWrapper/>
+            <AlertWrapper
+                :name="name"
+                :address="address"
+                :img="img"
+                :time="time"
+                :description="description"
+                :descriptionDetail="descriptionDetail"
+                :ticketInfo="ticketInfo"
+                :phone="phone"
+                :class1="class1"
+            />
         </div>
     </div>
 </div>
@@ -36,10 +46,24 @@ export default {
         address:String,
         img:{
             type:String,
-            default:"../assets/default.jpg",
+            default:"img/default.jpg",
         },
+        description:String,
+        descriptionDetail:String,
+        ticketInfo:{
+            type:String,
+            default:"無費用資訊"
+        },
+        phone:{
+            type:String,
+            default:"無聯絡電話"
+        },
+        class1:{
+            type:String,
+            default:"其他類別"
+        }
     }
-    // ['name','img','time','address']
+
 }
 </script>
 
@@ -103,20 +127,6 @@ export default {
             color: #525151;
             vertical-align: middle;
         }
-    button{
-        display: block;
-        width: 60%;
-        margin: auto;
-        color: #08A6BB;
-        background: #FFFFFF;
-        border: 4px solid #08A6BB;
-        box-sizing: border-box;
-        border-radius: 8px;
-        &:hover{
-            color: #FFF;
-            background: #08A6BB;
-        }
-    }
     }
 }
 
