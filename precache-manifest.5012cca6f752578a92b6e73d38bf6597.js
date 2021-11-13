@@ -1,18 +1,18 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2e0239af571cad0fadc7",
-    "url": "/F2EW1/css/app.2ce2e29e.css"
+    "revision": "ca98340176d29063c9ac",
+    "url": "/F2EW1/css/app.0573f09c.css"
   },
   {
-    "revision": "1c0cb4d4e339705319d2",
-    "url": "/F2EW1/css/chunk-1645f4ed.7fa920cf.css"
+    "revision": "be4d9c979700f03252e2",
+    "url": "/F2EW1/css/chunk-5c14cb1a.4f8d1ba7.css"
   },
   {
-    "revision": "7d467cabbadd176fa679",
-    "url": "/F2EW1/css/chunk-2122a7bb.9e177c33.css"
+    "revision": "7c527a5bed7d1cc78469",
+    "url": "/F2EW1/css/chunk-9a29d1f0.14e1a887.css"
   },
   {
-    "revision": "7e37082974b451397d7d",
+    "revision": "4d094ba30b8da0b66823",
     "url": "/F2EW1/css/chunk-vendors.036e1f22.css"
   },
   {
@@ -28,7 +28,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/F2EW1/img/unsplash_dQejX2ucPBs.de1987d9.png"
   },
   {
-    "revision": "df737e4fefef23a35b2595115b3b73cc",
+    "revision": "66d07b32df218a9ab27a4fd510f59693",
     "url": "/F2EW1/index.html"
   },
   {
@@ -36,20 +36,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/F2EW1/js/about.398e5f52.js"
   },
   {
-    "revision": "2e0239af571cad0fadc7",
-    "url": "/F2EW1/js/app.4ba71e42.js"
+    "revision": "ca98340176d29063c9ac",
+    "url": "/F2EW1/js/app.e3fdb852.js"
   },
   {
-    "revision": "1c0cb4d4e339705319d2",
-    "url": "/F2EW1/js/chunk-1645f4ed.0cd24c38.js"
+    "revision": "be4d9c979700f03252e2",
+    "url": "/F2EW1/js/chunk-5c14cb1a.05129d2f.js"
   },
   {
-    "revision": "7d467cabbadd176fa679",
-    "url": "/F2EW1/js/chunk-2122a7bb.5b8a616a.js"
+    "revision": "7c527a5bed7d1cc78469",
+    "url": "/F2EW1/js/chunk-9a29d1f0.45c25b7d.js"
   },
   {
-    "revision": "7e37082974b451397d7d",
-    "url": "/F2EW1/js/chunk-vendors.53874586.js"
+    "revision": "4d094ba30b8da0b66823",
+    "url": "/F2EW1/js/chunk-vendors.1fda4822.js"
   },
   {
     "revision": "d52d9932a6754c7e948e8d0004b944fe",
