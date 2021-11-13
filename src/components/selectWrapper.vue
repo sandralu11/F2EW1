@@ -8,17 +8,17 @@
         <div class="content">
             <p>Welcome to Travel Taiwan</p>
             <div class="selectbox">
-                <select>
-                    <option>類別</option>
-                    <option>Dog</option>
-                    <option>Cat</option>
+                <select v-model="nowIndexClass" @change="nowClass = '所有類別'">
+                    <option v-for="item in indexClass" :key="item.value"  :value="item.value">{{item.name}}</option>
                 </select>
-                <select>
-                    <option>所有縣市</option>
-                    <option>Dog</option>
-                    <option>Cat</option>
+                <select v-model="nowClass">
+                    <option v-for="item in selectClass" :key="item"  :value="item">{{item}}</option>
                 </select>
-                <span class="icon">
+                <select v-model="nowCity">
+                    <option value="all">所有縣市</option>
+                    <option v-for="item in city" :key="item.value" :value="item.value">{{item.name}}</option>
+                </select>
+                <span class="icon" @click="search">
                     <i class='bx bx-search-alt'></i>
                 </span>
             </div>
@@ -37,7 +37,155 @@ export default {
     },
     directives: {
         swiper: directive
-    }
+    },
+    data(){
+        return{
+            nowIndexClass:'ScenicSpot',
+            indexClass:[
+            {
+                value:'ScenicSpot',
+                name: '景點導覽'
+            },
+            {
+                value:'Activity',
+                name: '觀光活動'
+            }
+            ],
+            nowClass:"所有類別",
+            ScenicSportClass:[
+                "所有類別",
+                "文化類",
+                "自然風景類",
+                "生態類",
+                "國家風景區類",
+                "遊憩類",
+                "古蹟類",
+                "觀光工廠類",
+                "廟宇類",
+                "休閒農業類",
+                "體育健身類",
+            ],
+            ActivityClass:[
+                "所有類別",
+                "年度活動",
+                "藝文活動",
+                "節慶活動",
+                "其他",
+            ],
+            nowCity:'all',
+            city:[  
+                {
+                    value:'Taipei',
+                    name: '臺北市'
+                },
+                {
+                    value:'NewTaipei',
+                    name: '新北市'
+                },
+                {
+                    value:'Taoyuan',
+                    name: '桃園市'
+                },
+                {
+                    value:'Taichung',
+                    name: '臺中市'
+                },
+                {
+                    value:'Tainan',
+                    name: '臺南市'
+                },
+                {
+                    value:'Kaohsiung',
+                    name: '高雄市'
+                },
+                {
+                    value:'Keelung',
+                    name: '基隆市'
+                },
+                {
+                    value:'Hsinchu',
+                    name: '新竹市',
+                },
+                {
+                    value:'HsinchuCounty',
+                    name: '新竹縣',
+                },
+                {
+                    value:'MiaoliCounty',
+                    name: '苗栗縣',
+                },
+                {
+                    value:'ChanghuaCounty',
+                    name: '彰化縣',
+                },
+                {
+                    value:'NantouCounty',
+                    name: '南投縣',
+                },
+                {
+                    value:'YunlinCounty',
+                    name: '雲林縣',
+                },
+                {
+                    value:'ChiayiCounty',
+                    name: '嘉義縣',
+                },
+                {
+                    value:'Chiayi',
+                    name: '嘉義市',
+                },
+                {
+                    value:'PingtungCounty',
+                    name: '屏東縣',
+                },
+                {
+                    value:'YilanCounty',
+                    name: '宜蘭縣',
+                },
+                {
+                    value:'HualienCounty',
+                    name: '花蓮縣',
+                },
+                {
+                    value:'TaitungCounty',
+                    name: '臺東縣',
+                },
+                {
+                    value:'KinmenCounty',
+                    name: '金門縣',
+                },
+                {
+                    value:'PenghuCounty',
+                    name: '澎湖縣',
+                },
+                {
+                    value:'LienchiangCounty',
+                    name: '連江縣',
+                },
+                ],
+
+        }
+    },
+    methods:{
+        search:function(){
+            this.$router.push({
+                path:'/'+this.nowIndexClass+'/'+this.nowCity,
+                query: {
+                    filter: this.nowClass
+                }
+            })
+        }
+    },
+    computed:{
+        selectClass () {
+            if(this.nowIndexClass==="ScenicSpot"){
+                return this.ScenicSportClass
+            }else{
+                return this.ActivityClass
+            }
+        }
+    },
+
 }
 </script>
 
@@ -66,6 +214,7 @@ export default {
             text-shadow: 10px 8px 12px rgba(0, 0, 0, 0.37);
         }
         .icon{
+            cursor: pointer;
             background-color: #08A6BB;
             border-radius: 8px;
             padding: 10px;

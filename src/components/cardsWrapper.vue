@@ -13,12 +13,13 @@
             <ul>
                 <li class="locationn-box"> 
                     <i class='bx bxs-map'></i>
-                    <span class="location">{{address}}</span>
+                    <span class="location">{{ address || location || "詳見官網"}}</span>
                 </li>
             </ul>
             <AlertWrapper
                 :name="name"
                 :address="address"
+                :location="location"
                 :img="img"
                 :time="time"
                 :description="description"
@@ -42,11 +43,15 @@ export default {
     },
     props: {
         name:String,
-        time:String,
+        time:{
+            type:String,
+            default:"詳見官網",
+        },
         address:String,
+        location:String,
         img:{
             type:String,
-            default:"img/default.jpg",
+            default:"https://i.imgur.com/TtvQ2iH.jpg",
         },
         description:String,
         descriptionDetail:String,

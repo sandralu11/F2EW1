@@ -8,9 +8,9 @@
                 </router-link>
             </ul>
             <ul class="list"> 
-                <li><router-link to="/">首頁</router-link></li>
-                <li><router-link to="/ScenicSpot">景點導覽</router-link></li>
-                <li><router-link to="/Activity">觀光活動</router-link></li>
+                <li><router-link to="/" exact>首頁</router-link></li>
+                <li><router-link to="/ScenicSpot/all">景點導覽</router-link></li>
+                <li><router-link to="/Activity/all">觀光活動</router-link></li>
             </ul>
         </nav>
     </header>
@@ -78,13 +78,15 @@ header{
             &:hover{
                 font-weight: bold;
                 color: #08A6BB;
-                
             }
             @include mobile{
                 font-size: 16px;
             }
         }
     }
-
+    .router-link-active{
+            font-weight: bold;
+            color: #08A6BB;
+    }
 }
 </style>

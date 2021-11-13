@@ -19,19 +19,20 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
-    path: '/ScenicSpot',
+    path: '/ScenicSpot/:city',
     name: 'ScenicSpot',
     component: () => import('../views/ScenicSpot.vue')
   },
   {
-    path: '/Activity',
+    path: '/Activity/:city',
     name: 'Activity',
     component: () => import('../views/Activity.vue')
   }
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
+  mode: 'history'
 })
 
 export default router

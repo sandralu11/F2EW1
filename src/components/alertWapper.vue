@@ -10,7 +10,7 @@
         <ul>
             <li> 
                 <i class='bx bxs-map'></i>
-                <span class="location">{{address}}</span>
+                <span class="location">{{ address || location || "詳見官網"}}</span>
             </li>
         </ul>
         <ul>
@@ -20,8 +20,8 @@
             </li>
         </ul>
         <ul>
-          <li class="description" >{{description}}</li>
-          <!-- <li class="descriptionDetail" >{{descriptionDetail}}</li> -->
+          <!-- <li class="description" >{{description}}</li> -->
+          <li class="descriptionDetail" >{{descriptionDetail}}</li>
         </ul> 
         <ul class="img">
           <img :src="img" alt="trawelimg">
@@ -52,28 +52,32 @@ export default {
     }
   },
   props: {
-    name:String,
-    time:String,
-    address:String,
-    img:{
-        type:String,
-        default:"img/default.jpg",
-    },
-    description:String, 
-    descriptionDetail:String,
-    ticketInfo:{
-      type:String,
-      default:"無費用資訊"
-    },
-    phone:{
-      type:String,
-      default:"無聯絡電話"
-    },
-    class1:{
-      type:String,
-      default:"其他類別"
+        name:String,
+        time:{
+            type:String,
+            default:"詳見官網",
+        },
+        address:String,
+        location:String,
+        img:{
+            type:String,
+            default:"https://i.imgur.com/TtvQ2iH.jpg",
+        },
+        description:String,
+        descriptionDetail:String,
+        ticketInfo:{
+            type:String,
+            default:"無費用資訊"
+        },
+        phone:{
+            type:String,
+            default:"無聯絡電話"
+        },
+        class1:{
+            type:String,
+            default:"其他類別"
+        }
     }
-  }
 };
 </script>
 
