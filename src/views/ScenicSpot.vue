@@ -5,7 +5,7 @@
             <h2>{{searchCity}}景點</h2>
             <p>台灣的各個美景，都美不勝收。</p>
             <p>等你一同來發現這座寶島的奧妙！</p>
-            <CardsWrapper v-for="(item, i) in list" :key="i"
+            <CardsWrapper v-for="(item, i) in calculate" :key="i"
               :name="item.Name"
               :img="item.Picture.PictureUrl1"
               :time="item.OpenTime"
@@ -16,6 +16,11 @@
               :ticketInfo="item.TicketInfo"
               :class1="item.Class1"
           />
+        <ul>
+          <li @click="page=1"><<</li>
+          <li v-for="item in pagination" :key="item" @click="page=item" :class="{ active: item === page }">{{item}}</li>
+          <li @click="page=maxPage">>></li>
+        </ul>
         </div>
     </div>
 </template>
@@ -37,9 +42,10 @@ export default {
     },
     methods:  {
       updateList (){
+        let filter=this.$route.query.filter
         let notes=this.$route.name
         let city=this.$route.params.city === 'all' ? '' : this.$route.params.city
-        getAPI(notes,city).then(res => {
+        getAPI(notes,city,false,filter).then(res => {
           this.list=res
         })
       }
@@ -141,12 +147,34 @@ export default {
             name:'所有'
           }
         ],
+      page:1,
       }
     },
     computed:{
         searchCity () {
-            const city = this.city.find(city => city.value === this.$route.params.city)
-            return city.name
+          const city = this.city.find(city => city.value === this.$route.params.city)
+          return city.name
+        },
+        calculate (){
+          return this.list.slice((this.page-1)*8,this.page*8)
+        },
+        maxPage(){
+          let maxPage=Math.floor(this.list.length/8)
+          console.log(maxPage);
+          if(maxPage%8 !==0){
+            maxPage+=1
+          }
+          return maxPage
+        },
+        pagination(){
+          let page=this.page
+          if(page===1){
+            return [page,page+1,page+2]
+          }else if(page===this.maxPage){
+            return [page-2,page-1,page]
+          }else{
+            return [page-1,page,page+1]
+          }
         }
     },
     watch:{

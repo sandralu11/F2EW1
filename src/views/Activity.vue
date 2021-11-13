@@ -17,6 +17,7 @@
               :ticketInfo="item.TicketInfo"
               :class1="item.Class1"
           />
+            
         </div>
     </div>
 </template>
@@ -38,10 +39,10 @@ export default {
     },
     methods:  {
       updateList (){
-        console.log(this.$route.query.filter);
+        let filter=this.$route.query.filter
         let notes=this.$route.name
         let city=this.$route.params.city === 'all' ? '' : this.$route.params.city
-        getAPI(notes,city).then(res => {
+        getAPI(notes,city,false,filter).then(res => {
           this.list=res
         })
       }
@@ -153,6 +154,9 @@ export default {
     },
     watch:{
       '$route.params' (nV, oV) {
+        this.updateList()
+      },
+      '$route.query' () {
         this.updateList()
       }
     }

@@ -168,11 +168,16 @@ export default {
     },
     methods:{
         search:function(){
+
+            let obj={}
+            if(this.nowClass!=='所有類別'){
+                obj.filter = this.nowClass
+            }
+
+
             this.$router.push({
                 path:'/'+this.nowIndexClass+'/'+this.nowCity,
-                query: {
-                    filter: this.nowClass
-                }
+                query:obj
             })
         }
     },

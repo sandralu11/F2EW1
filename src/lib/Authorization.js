@@ -1,13 +1,16 @@
 import axios from "axios";
 import jsSHA from "jssha";
-export default function getAPI(notes='ScenicSpot',city = '', className){
+export default function getAPI(notes='ScenicSpot',city = '',limit, className){
     return new Promise((resolve, reject) => {
-        let url=`https://ptx.transportdata.tw/MOTC/v2/Tourism/${notes}/${city}?$top=8&$format=JSON`
+        let url=`https://ptx.transportdata.tw/MOTC/v2/Tourism/${notes}/${city}?$format=JSON`
 
         if(className){
-            url+=`&filter=contains(Class1,'${className}') or contains(Class2,'${className}') or contains(Class3,'${className}')`
+            url+=`&filter=contains(Class1,'${className}') `
         }
-
+        if(limit){
+            url+=`&$top=8`
+        }
+    
         axios.get(
             url,
             {
@@ -37,3 +40,4 @@ function getAuthorizationHeader() {
 }
 
 // ?$filter=contains(Class1%2C'')%20or%20contains(Class2%2C'')
+//or contains(Class2,'${className}') or contains(Class3,'${className}')

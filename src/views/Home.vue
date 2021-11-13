@@ -46,7 +46,7 @@ export default {
     ActivityWrapper
   },
   created (){
-    getAPI().then(res => {
+    getAPI("ScenicSpot","",true).then(res => {
       this.list=res
     })
   },
