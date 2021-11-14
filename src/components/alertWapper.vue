@@ -87,6 +87,7 @@ export default {
 button{
   display: block;
   width: 60%;
+  height: 40px;
   margin: auto;
   color: #08A6BB;
   background: #FFFFFF;
@@ -101,7 +102,7 @@ button{
 .alter-info{
     padding: 40px;
     width: 50%;
-    @include mobile{
+    @include desktops{
     width: 80%;
     }
     ul{

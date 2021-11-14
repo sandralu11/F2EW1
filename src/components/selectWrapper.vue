@@ -205,10 +205,9 @@ export default {
         transform: translate(-50%,-50%);    
         z-index: 2;
         .selectbox{
-            @include mobile{
-                display: flex;
-                justify-content: space-between;
-            }
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
         }
         p{
             text-align: center;
@@ -231,32 +230,21 @@ export default {
             }
         }
         select{
-            height: 48px;
-            margin: 10px;
+            margin: 5px;
             border-radius: 10px;
             text-align: center;
             border:#FFF;
-            &:nth-child(even){
-                width: 270px;
-                @include mobile{
-                    width: 175px;
-                }
-            }
-            &:nth-child(odd){
-                width: 190px;
-                @include mobile{
-                    width: 75px;
-                }
-            }
+            flex-grow:1;
         }
     }
     .mySwiper{
         img{
             width: 100%;
-            @include mobile{
+            @include desktops{
                 height: 450px;
                 object-fit: cover;
             }
+            
         }
     }
 }

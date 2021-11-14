@@ -1,14 +1,14 @@
-@mixin desktops{
-@media(max-width: 1024px){
-    @content;
-}
-}
+
 @mixin large-desktops {
 @media (max-width: 1200px) {
     @content;
 }
 }
-
+@mixin desktops{
+@media(max-width: 1024px){
+    @content;
+}
+}
 @mixin mobile{
 @media(max-width: 576px){
     @content;

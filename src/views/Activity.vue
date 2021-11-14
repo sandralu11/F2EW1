@@ -17,7 +17,11 @@
               :ticketInfo="item.TicketInfo"
               :class1="item.Class1"
           />
-            
+        <ul class="pagination">
+            <li @click="page=1"><i class='bx bxs-left-arrow' ></i></li>
+            <li v-for="item in pagination" :key="item" @click="page=item" :class="{ active: item === page }">{{item}}</li>
+            <li @click="page=maxPage"><i class='bx bxs-right-arrow'></i></li>
+        </ul>
         </div>
     </div>
 </template>
@@ -144,21 +148,43 @@ export default {
             name:'所有'
           }
         ],
+        page:1,
       }
     },
     computed:{
         searchCity () {
             const city = this.city.find(city => city.value === this.$route.params.city)
             return city.name
+        },
+        calculate (){
+          return this.list.slice((this.page-1)*8,this.page*8)
+        },
+        maxPage(){
+          let maxPage=Math.floor(this.list.length/8)
+          console.log(maxPage);
+          if(maxPage%8 !==0){
+            maxPage+=1
+          }
+          return maxPage
+        },
+        pagination(){
+          let page=this.page
+          if(page===1){
+            return [page,page+1,page+2]
+          }else if(page===this.maxPage){
+            return [page-2,page-1,page]
+          }else{
+            return [page-1,page,page+1]
+          }
         }
     },
     watch:{
       '$route.params' (nV, oV) {
         this.updateList()
       },
-      '$route.query' () {
-        this.updateList()
-      }
+      // '$route.query' () {
+      //   this.updateList()
+      // }
     }
   }
 </script>
@@ -167,7 +193,7 @@ export default {
 @import '../assets/media.scss';
 .container{
   margin:0 90px;
-  @include mobile{
+  @include desktops{
     margin: 0 20px;
   }
   h2{ 
@@ -180,6 +206,22 @@ export default {
     font-size: 16px;
     color: #AEAEAE;
     
+  }
+  .pagination{
+    margin: 100px 0;
+    text-align: center;
+    li{
+      cursor: pointer;
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      border-radius: 3px;
+    }
+    .active{
+      background-color: #08A6BB;
+      color: #fff;
+    }
   }
 }
 

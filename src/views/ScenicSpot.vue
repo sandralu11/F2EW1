@@ -16,10 +16,10 @@
               :ticketInfo="item.TicketInfo"
               :class1="item.Class1"
           />
-        <ul>
-          <li @click="page=1"><<</li>
-          <li v-for="item in pagination" :key="item" @click="page=item" :class="{ active: item === page }">{{item}}</li>
-          <li @click="page=maxPage">>></li>
+        <ul class="pagination">
+            <li @click="page=1"><i class='bx bxs-left-arrow' ></i></li>
+            <li v-for="item in pagination" :key="item" @click="page=item" :class="{ active: item === page }">{{item}}</li>
+            <li @click="page=maxPage"><i class='bx bxs-right-arrow'></i></li>
         </ul>
         </div>
     </div>
@@ -189,7 +189,7 @@ export default {
 @import '../assets/media.scss';
 .container{
   margin:0 90px;
-  @include mobile{
+  @include desktops{
     margin: 0 20px;
   }
   h2{ 
@@ -202,6 +202,22 @@ export default {
     font-size: 16px;
     color: #AEAEAE;
     
+  }
+  .pagination{
+    margin: 100px 0;
+    text-align: center;
+    li{
+      cursor: pointer;
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      border-radius: 3px;
+    }
+    .active{
+      background-color: #08A6BB;
+      color: #fff;
+    }
   }
 }
 

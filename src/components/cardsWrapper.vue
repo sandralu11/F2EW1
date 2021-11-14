@@ -81,7 +81,7 @@ export default {
     padding: 15px;
     display: inline-block;
     width: 25%;
-    @include mobile{
+    @include desktops{
         width: 100%;
     }
     .card{
@@ -98,6 +98,9 @@ export default {
             padding: 0 15px 20px;
             ul{
                 margin: 20px 0 ;
+                &:first-child{
+                    height: 100px;
+                }
             }
         }
         i{
@@ -126,11 +129,15 @@ export default {
             font-size: 16px;
             vertical-align: middle;
         }
+        .locationn-box{
+            height: 40px;
+        }
         .location{
             font-weight: 500;
             font-size: 16px;
             color: #525151;
             vertical-align: middle;
+            
         }
     }
 }
