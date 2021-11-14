@@ -51,5 +51,9 @@ p{
     font-size: 20px;
     text-align: center;
     padding: 20px;
+    color: #aaa;
+    &:hover{
+        color: #08A6BB
+    }
 }
 </style>
