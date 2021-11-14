@@ -1,30 +1,25 @@
 <template>   
     <div class="view">
         <ul class="list">
-        <li class="item">
-            <img src="https://source.unsplash.com/random/" alt="img">
-            <p>年度活動</p>
-        </li>
-        <li class="item">
-            <img src="https://source.unsplash.com/random/" alt="img">
-            <p>藝文活動</p>
-        </li>
-        <li class="item">
-            
-            <img src="https://source.unsplash.com/random/" alt="img">
-            <p>節慶活動</p>
-        </li>
-        <li class="item">
-            <img src="https://source.unsplash.com/random/" alt="img">
-            <p>其他活動</p>
-        </li>
+            <li class="item" v-for="item in list" :key="item">
+                <router-link :to="{path:'/Activity/all',query:{
+                    filter:item
+                }}">
+                <img src="https://source.unsplash.com/random/" alt="img">
+                <p>{{item}}</p>
+                </router-link>
+            </li>
         </ul>
     </div>
 </template>
 
 <script>
 export default {
-
+    data () {
+        return{
+            list: ['年度活動','藝文活動','節慶活動','其他活動']
+        }
+    }
 }
 </script>
 

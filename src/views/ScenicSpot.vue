@@ -161,20 +161,27 @@ export default {
         maxPage(){
           let maxPage=Math.floor(this.list.length/8)
           console.log(maxPage);
-          if(maxPage%8 !==0){
+          if(this.list.length%8 !==0){
             maxPage+=1
           }
           return maxPage
         },
         pagination(){
-          let page=this.page
-          if(page===1){
-            return [page,page+1,page+2]
-          }else if(page===this.maxPage){
-            return [page-2,page-1,page]
-          }else{
-            return [page-1,page,page+1]
+        if (this.maxPage===1){
+            return [1]
+          }else if (this.maxPage===2){
+            return [1,2]
+          } else {
+            let page=this.page
+            if(page===1){
+              return [page,page+1,page+2]
+            }else if(page===this.maxPage){
+              return [page-2,page-1,page]
+            }else{
+              return [page-1,page,page+1]
+            }
           }
+          
         }
     },
     watch:{
