@@ -1,6 +1,6 @@
 <template>
     <footer>
-        <p>Copyright©2021F2ESandra</p>
+        <p>CopyRight : Travel Taiwan ,Design By : Tracy ,Code By S</p>
     </footer>
 </template>
 
